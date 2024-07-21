@@ -1,18 +1,41 @@
 {
   "name": "js-moala",
-  "version": "1.0.0",
-  "main": "index.js",
+  "version": "0.1.0",
+  "description": "Moala SDK for interacting with Moala API",
+  "main": "src/index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "build": "babel src -d dist",
+    "prepublishOnly": "npm run build"
   },
-  "keywords": [],
-  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/bitkap/js-moala.git"
+  },
+  "keywords": [
+    "sdk",
+    "moala",
+    "api",
+    "javascript"
+  ],
+  "author": "hunterbrightdesign <hunterbrightdesign@gmail.com>",
   "license": "ISC",
-  "description": "",
   "dependencies": {
     "axios": "^1.7.2"
   },
   "devDependencies": {
-    "jest": "^29.7.0"
+    "axios-mock-adapter": "^1.22.0",
+    "jest": "^29.7.0",
+    "@babel/cli": "^7.16.0",
+    "@babel/core": "^7.16.0",
+    "@babel/preset-env": "^7.16.0"
+  },
+  "jest": {
+    "testEnvironment": "node"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env"
+    ]
   }
 }
